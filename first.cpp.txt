@@ -1,0 +1,46 @@
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+void sumofpairs(int arr[], int n, int sum){
+sort(arr, arr + n);
+
+int a= 0;
+int b = n - 1;
+
+while (a < b){
+
+if (arr[a] + arr[b] == sum){
+cout << "True";
+return;
+}
+else{
+if(arr[a] + arr[b] < sum) {
+a++;
+}
+else{
+b--;
+}
+}
+}
+cout << "False";
+}
+
+int main(){
+
+int m;
+cin>>m;
+int arr[m];
+for(int i=0;i<m;i++){
+cin>>arr[i];
+}
+
+int sum; cin>>sum;
+
+int n = sizeof(arr)/sizeof(arr[0]);
+
+sumofpairs (arr, n, sum);
+
+return 0;
+}
